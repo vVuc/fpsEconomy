@@ -3,13 +3,14 @@ package com.thiago.fpseconomy.dto;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @Getter
 public class PurchaseRequestDTO {
 
     enum category {
-        HIGHT,
+        HIGH,
         MEDIUM,
         LOW
     }
@@ -23,5 +24,8 @@ public class PurchaseRequestDTO {
     private category itemCategory;
 
     @NotNull
-    private Double customerProposal;
+    private BigDecimal itemPrice;
+
+    @NotNull
+    private UUID customerId;
 }
